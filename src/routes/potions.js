@@ -89,7 +89,9 @@ router.delete("/:id", async (req,res)=>{
     await db
     .delete(potions)
     .where(eq(potions.id,+req.params.id))
-    return res
+    return res.status(200).json({
+        message:"potion deleted successfully",
+    })
 })
 
 router.put("/:id", async (req,res)=>{
